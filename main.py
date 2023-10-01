@@ -58,7 +58,7 @@ class Calculator():
         self.b1.bind("<Button-1>",self.calculate)
         self.b1.pack(side="left",anchor="nw",ipadx=33,ipady=10,padx=2,pady=5)
 
-        self.b1 = Button(self.buttonFrameRow1,text="/",font="comic 25")
+        self.b1 = Button(self.buttonFrameRow1,text="÷",font="comic 25")
         self.b1.bind("<Button-1>",self.calculate)
         self.b1.pack(side="left",anchor="nw",ipadx=33,ipady=10,padx=2,pady=5)
 
@@ -119,7 +119,9 @@ class Calculator():
         self.text = event.widget.cget("text")
         self.value = self.scvalue.get()
         if (self.text == "="):
+            self.scvalue.set("Ans")
             self.value = self.value.replace("x","*")
+            self.value = self.value.replace("÷","/")
             if "Ans" in self.value:
                 self.prevalue = self.value.replace("Ans",str(self.Ans))
                 self.Ans = eval(self.prevalue) # 35 
