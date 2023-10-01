@@ -11,7 +11,7 @@ class Calculator():
         self.root.maxsize(595,495)
         # Set calculator
         self.root.title("Caculator")
-        self.root.wm_iconbitmap("calculator-icon.ico")
+        self.root.wm_iconbitmap("Calculator-ico.ico")
         self.Ans = '0'
         self.scvalue = StringVar()
         # validation = root.register()
@@ -19,6 +19,8 @@ class Calculator():
         self.screen = Entry(self.root,textvariable=self.scvalue,font="comic 25",borderwidth=30,relief="sunken",state="readonly").pack(anchor="nw",ipadx=80,padx=4)
         self.buttonsFrame = Frame(self.root)
         
+        self.buttonFrameRow1 = Frame(self.buttonsFrame)
+
         self.b1 = Button(self.buttonFrameRow1,text="1",font="comic 25")
         self.b1.bind("<Button-1>",self.calculate)
         self.b1.pack(side="left",anchor="nw",ipadx=42,ipady=10,padx=2,pady=5)
@@ -119,12 +121,11 @@ class Calculator():
         self.text = event.widget.cget("text")
         self.value = self.scvalue.get()
         if (self.text == "="):
-            self.scvalue.set("Ans")
             self.value = self.value.replace("x","*")
             self.value = self.value.replace("÷","/")
             if "Ans" in self.value:
                 self.prevalue = self.value.replace("Ans",str(self.Ans))
-                self.Ans = eval(self.prevalue) # 35 
+                self.Ans = eval(self.prevalue)
                 print("\n"+str(self.Ans))
                 self.Ans = str(self.Ans)
                 self.value = self.Ans.replace("Ans",str(self.Ans))
