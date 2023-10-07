@@ -1,5 +1,5 @@
 # Calculator v1.5
-![Calulator ScreenShot](https://github.com/FirasatJhujh/Calculator-Version-1.0/blob/master/Calculator-ScreenShort.png)
+![Calculator Screenshot](https://raw.githubusercontent.com/FirasatJhujh/Calculator-Version-1.5/master/Calculator-ScreenShort.png)
 
 ## setup
 ### There is a setup of this unique calculator . 
